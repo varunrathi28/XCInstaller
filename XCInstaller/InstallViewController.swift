@@ -7,15 +7,21 @@
 //
 
 import Cocoa
+import AppKit
 
-class ViewController: NSViewController {
-
+class InstallViewController: NSViewController {
+    
+    @IBOutlet var comboBoxSimulator: NSComboBox!
+    @IBOutlet var popUpAppPath: NSPopUpButton!
+    @IBOutlet var btnInstall: NSButton!
+    
+    //@IBAction var lblPath : NSLabe
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
