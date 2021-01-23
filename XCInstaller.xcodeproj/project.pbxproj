@@ -13,6 +13,7 @@
 		37869A3D25BC07630093BF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37869A3C25BC07630093BF13 /* Assets.xcassets */; };
 		37869A4025BC07630093BF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37869A3E25BC07630093BF13 /* Main.storyboard */; };
 		37869A4C25BC0C100093BF13 /* DeviceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A4B25BC0C100093BF13 /* DeviceDataStore.swift */; };
+		37869A5325BC2A000093BF13 /* ShellCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A5225BC2A000093BF13 /* ShellCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		37869A4125BC07630093BF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37869A4225BC07630093BF13 /* XCInstaller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCInstaller.entitlements; sourceTree = "<group>"; };
 		37869A4B25BC0C100093BF13 /* DeviceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataStore.swift; sourceTree = "<group>"; };
+		37869A5225BC2A000093BF13 /* ShellCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		37869A3425BC07620093BF13 /* XCInstaller */ = {
 			isa = PBXGroup;
 			children = (
+				37869A5125BC29D80093BF13 /* Shell terminal */,
 				37869A4A25BC0C040093BF13 /* DataStore */,
 				37869A3525BC07620093BF13 /* AppDelegate.swift */,
 				37869A3725BC07620093BF13 /* InstallViewController.swift */,
@@ -75,6 +78,14 @@
 				37869A4B25BC0C100093BF13 /* DeviceDataStore.swift */,
 			);
 			path = DataStore;
+			sourceTree = "<group>";
+		};
+		37869A5125BC29D80093BF13 /* Shell terminal */ = {
+			isa = PBXGroup;
+			children = (
+				37869A5225BC2A000093BF13 /* ShellCommandHandler.swift */,
+			);
+			path = "Shell terminal";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 				37869A3825BC07620093BF13 /* InstallViewController.swift in Sources */,
 				37869A3625BC07620093BF13 /* AppDelegate.swift in Sources */,
 				37869A3B25BC07620093BF13 /* XCInstaller.xcdatamodeld in Sources */,
+				37869A5325BC2A000093BF13 /* ShellCommandHandler.swift in Sources */,
 				37869A4C25BC0C100093BF13 /* DeviceDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
