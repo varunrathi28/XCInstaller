@@ -13,14 +13,14 @@ import CoreData
 
 class DeviceDataStore {
     
-    let deviceEntityName = "Device"
-    var mainContext: NSManagedObjectContext =  {
+  private  let deviceEntityName = "Device"
+  private  var mainContext: NSManagedObjectContext =  {
         let delegate = NSApplication.shared.delegate as! AppDelegate
         let context = delegate.persistentContainer.viewContext
         return context
     }()
     
-    func getSimulatorDevicesList() -> [Device]? {
+  public  func getSimulatorDevicesList() -> [Device]? {
         let fetchRequest: NSFetchRequest<Device> = Device.fetchRequest()
         do {
             if let result:[Device] = try mainContext.fetch(fetchRequest), !result.isEmpty {
@@ -33,7 +33,7 @@ class DeviceDataStore {
         return nil
     }
     
-    func saveSimulatorListToStore( devices : [[String:AnyObject]]) {
+   public func saveSimulatorListToStore( devices : [[String:AnyObject]]) {
         guard devices.isEmpty == false else { return }
         mainContext.perform {
             devices.forEach { dic in
@@ -47,12 +47,12 @@ class DeviceDataStore {
                 try self.mainContext.save()
             }
             catch {
-                print("Unnable to save device")
+                print("Unnable to save device: \(error)")
             }
         }
     }
     
-    func insertDeviceEntity(_ dic: [String:AnyObject],  in context: NSManagedObjectContext) {
+   fileprivate func insertDeviceEntity(_ dic: [String:AnyObject],  in context: NSManagedObjectContext) {
          guard let udid = dic["udid"] as? String else { return }
         
         if let deviceEntity = NSEntityDescription.entity(forEntityName: deviceEntityName, in: context) {
@@ -67,7 +67,7 @@ class DeviceDataStore {
         }
     }
     
-    func checkIfDeviceExists(for udid:String, in context: NSManagedObjectContext) -> Bool {
+    fileprivate func checkIfDeviceExists(for udid:String, in context: NSManagedObjectContext) -> Bool {
            let fetchRequest: NSFetchRequest<Device> = Device.fetchRequest()
            fetchRequest.predicate = NSPredicate(format: "%K = %@","udid",udid)
            fetchRequest.fetchLimit = 1
