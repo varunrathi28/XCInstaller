@@ -72,6 +72,7 @@ extension DeviceHelper: ShellCommandDelegate {
 
     
     func shellCommandDidFinish(_ exitcode: Int, with handler: ShellCommandHandler) {
+        print("command finished with status code \(exitcode)")
        self.completionHandler?(.success(true))
     }
     
