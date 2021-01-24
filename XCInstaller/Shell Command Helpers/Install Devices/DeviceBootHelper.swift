@@ -20,9 +20,10 @@ class DeviceBootHelper: NSObject {
         return path
     }
     
-    func bootDevices(_ deviceUdidList:[String]){
-        guard let path = getScriptExecutablePath() else { return }
-        let shellHandler = ShellCommandHandler.getCommandHandler(path: path, arguments:deviceUdidList, delegate: self)
+    func bootDevices(devices deviceUdidList:[String],_ appPath : String){
+        guard let shellPath = getScriptExecutablePath() else { return }
+        let combinedArguments = [appPath] + deviceUdidList
+        let shellHandler = ShellCommandHandler.getCommandHandler(path: shellPath, arguments:combinedArguments, delegate: self)
         self.scriptHandler = shellHandler
         shellHandler.execute()
     }
