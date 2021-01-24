@@ -21,6 +21,9 @@
 		37869A7425BC6EBC0093BF13 /* DeviceBootHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7325BC6EBC0093BF13 /* DeviceBootHelper.swift */; };
 		37869A7625BC6F460093BF13 /* ShellExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7525BC6F460093BF13 /* ShellExecutable.swift */; };
 		37869A7725BC8A300093BF13 /* BootDevices.sh in Resources */ = {isa = PBXBuildFile; fileRef = 37869A7125BC64360093BF13 /* BootDevices.sh */; };
+		37869A7925BD2FB30093BF13 /* MultiSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */; };
+		37869A7B25BD4D380093BF13 /* MultiSelectTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */; };
+		37869A7D25BD573C0093BF13 /* Device+DictionaryMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7C25BD573C0093BF13 /* Device+DictionaryMapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +42,11 @@
 		37869A5925BC51810093BF13 /* GetDevices.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GetDevices.sh; sourceTree = "<group>"; };
 		37869A6F25BC5D020093BF13 /* Data+JsonString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JsonString.swift"; sourceTree = "<group>"; };
 		37869A7125BC64360093BF13 /* BootDevices.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BootDevices.sh; sourceTree = "<group>"; };
-		37869A7225BC64460093BF13 /* InstallBuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = InstallBuild.sh; sourceTree = "<group>"; };
 		37869A7325BC6EBC0093BF13 /* DeviceBootHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBootHelper.swift; sourceTree = "<group>"; };
 		37869A7525BC6F460093BF13 /* ShellExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellExecutable.swift; sourceTree = "<group>"; };
+		37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectViewController.swift; sourceTree = "<group>"; };
+		37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectTableCell.swift; sourceTree = "<group>"; };
+		37869A7C25BD573C0093BF13 /* Device+DictionaryMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+DictionaryMapping.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,18 +79,17 @@
 		37869A3425BC07620093BF13 /* XCInstaller */ = {
 			isa = PBXGroup;
 			children = (
+				37869A7F25BD5F7C0093BF13 /* Shell Command Helpers */,
+				37869A7E25BD5F330093BF13 /* Views */,
 				37869A5825BC51680093BF13 /* Shell Scripts */,
 				37869A5125BC29D80093BF13 /* Shell terminal */,
 				37869A4A25BC0C040093BF13 /* DataStore */,
 				37869A3525BC07620093BF13 /* AppDelegate.swift */,
-				37869A3725BC07620093BF13 /* InstallViewController.swift */,
 				37869A3C25BC07630093BF13 /* Assets.xcassets */,
 				37869A3E25BC07630093BF13 /* Main.storyboard */,
 				37869A4125BC07630093BF13 /* Info.plist */,
 				37869A4225BC07630093BF13 /* XCInstaller.entitlements */,
 				37869A3925BC07620093BF13 /* XCInstaller.xcdatamodeld */,
-				37869A5425BC4A350093BF13 /* DeviceHelper.swift */,
-				37869A7325BC6EBC0093BF13 /* DeviceBootHelper.swift */,
 				37869A7525BC6F460093BF13 /* ShellExecutable.swift */,
 			);
 			path = XCInstaller;
@@ -114,9 +118,44 @@
 				37869A5925BC51810093BF13 /* GetDevices.sh */,
 				37869A6F25BC5D020093BF13 /* Data+JsonString.swift */,
 				37869A7125BC64360093BF13 /* BootDevices.sh */,
-				37869A7225BC64460093BF13 /* InstallBuild.sh */,
+				37869A7C25BD573C0093BF13 /* Device+DictionaryMapping.swift */,
 			);
 			path = "Shell Scripts";
+			sourceTree = "<group>";
+		};
+		37869A7E25BD5F330093BF13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37869A3725BC07620093BF13 /* InstallViewController.swift */,
+				37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */,
+				37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37869A7F25BD5F7C0093BF13 /* Shell Command Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37869A8125BD5FAC0093BF13 /* Install Devices */,
+				37869A8025BD5F910093BF13 /* GetDevices */,
+			);
+			path = "Shell Command Helpers";
+			sourceTree = "<group>";
+		};
+		37869A8025BD5F910093BF13 /* GetDevices */ = {
+			isa = PBXGroup;
+			children = (
+				37869A5425BC4A350093BF13 /* DeviceHelper.swift */,
+			);
+			path = GetDevices;
+			sourceTree = "<group>";
+		};
+		37869A8125BD5FAC0093BF13 /* Install Devices */ = {
+			isa = PBXGroup;
+			children = (
+				37869A7325BC6EBC0093BF13 /* DeviceBootHelper.swift */,
+			);
+			path = "Install Devices";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +234,12 @@
 				37869A5725BC4EC10093BF13 /* ShellTerminalDelegate.swift in Sources */,
 				37869A7425BC6EBC0093BF13 /* DeviceBootHelper.swift in Sources */,
 				37869A5525BC4A350093BF13 /* DeviceHelper.swift in Sources */,
+				37869A7925BD2FB30093BF13 /* MultiSelectViewController.swift in Sources */,
+				37869A7D25BD573C0093BF13 /* Device+DictionaryMapping.swift in Sources */,
 				37869A3625BC07620093BF13 /* AppDelegate.swift in Sources */,
 				37869A3B25BC07620093BF13 /* XCInstaller.xcdatamodeld in Sources */,
 				37869A5325BC2A000093BF13 /* ShellCommandHandler.swift in Sources */,
+				37869A7B25BD4D380093BF13 /* MultiSelectTableCell.swift in Sources */,
 				37869A7025BC5D020093BF13 /* Data+JsonString.swift in Sources */,
 				37869A4C25BC0C100093BF13 /* DeviceDataStore.swift in Sources */,
 				37869A7625BC6F460093BF13 /* ShellExecutable.swift in Sources */,
