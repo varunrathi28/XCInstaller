@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				37869A7F25BD5F7C0093BF13 /* Shell Command Helpers */,
-				37869A7E25BD5F330093BF13 /* Views */,
+				37869A7E25BD5F330093BF13 /* Scenes */,
 				37869A5825BC51680093BF13 /* Shell Scripts */,
 				37869A5125BC29D80093BF13 /* Shell terminal */,
 				37869A4A25BC0C040093BF13 /* DataStore */,
@@ -123,14 +123,13 @@
 			path = "Shell Scripts";
 			sourceTree = "<group>";
 		};
-		37869A7E25BD5F330093BF13 /* Views */ = {
+		37869A7E25BD5F330093BF13 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				37869A3725BC07620093BF13 /* InstallViewController.swift */,
-				37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */,
-				37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */,
+				37869A8325BD608F0093BF13 /* Device Selection */,
+				37869A8225BD60860093BF13 /* Main */,
 			);
-			path = Views;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		37869A7F25BD5F7C0093BF13 /* Shell Command Helpers */ = {
@@ -156,6 +155,23 @@
 				37869A7325BC6EBC0093BF13 /* DeviceBootHelper.swift */,
 			);
 			path = "Install Devices";
+			sourceTree = "<group>";
+		};
+		37869A8225BD60860093BF13 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				37869A3725BC07620093BF13 /* InstallViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		37869A8325BD608F0093BF13 /* Device Selection */ = {
+			isa = PBXGroup;
+			children = (
+				37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */,
+				37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */,
+			);
+			path = "Device Selection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
