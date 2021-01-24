@@ -11,11 +11,16 @@ import AppKit
 
 class InstallViewController: NSViewController {
     
-    @IBOutlet var comboBoxSimulator: NSComboBox!
+    @IBOutlet var btnSelectedSimulators: NSPopUpButton!
     @IBOutlet var popUpAppPath: NSPopUpButton!
     @IBOutlet var btnInstall: NSButton!
     var deviceHelper:DeviceHelper = DeviceHelper(DeviceDataStore())
     var dataSource:[Device] = []
+    var selectedDeviceIds:[String] = [] {
+        didSet {
+            self.updateSelectedSimulators()
+        }
+    }
     
     //@IBAction var lblPath : NSLabe
     override func viewDidLoad() {
@@ -42,16 +47,6 @@ class InstallViewController: NSViewController {
     }
     
     func openPanel() {
-        
-        let deviceDic =  self.getUpdatedDeviceList().map {
-            $0.dictionary
-        }
-        
-        let multiSelection = MultiSelectViewController.instantiate()
-        multiSelection.setDataSource(deviceDic)
-        self.presentAsModalWindow(multiSelection)
-        return
-        
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.allowsMultipleSelection = false
@@ -61,17 +56,34 @@ class InstallViewController: NSViewController {
         }
     }
     
+    func openDeviceSelectionMenu() {
+        let cellModels =  self.getUpdatedDeviceList().map {
+            DeviceCellViewModel.init($0)
+        }
+        let viewModel = DeviceSelectionViewModel(cellModels)
+        let multiSelection = MultiSelectViewController.instantiate(viewModel) {[weak self] udids in
+            guard let self = self else { return }
+            self.selectedDeviceIds = udids
+        }
+        //multiSelection.setDataSource(deviceDic)
+        self.presentAsModalWindow(multiSelection)
+    }
+    
     @IBAction func installClicked(_ sender: Any){
-        let udidList =  self.getUpdatedDeviceList().map {
-            $0.udid!
-            }[4..<7]
-        
+        guard selectedDeviceIds.count > 0 else {
+            print("Select atleast one device")
+            return
+        }
         let bootHelper = DeviceBootHelper()
-        bootHelper.bootDevices(Array(udidList))
+        bootHelper.bootDevices(selectedDeviceIds)
     }
     
     @IBAction func appPathSelected(sender: NSPopUpButton) {
         openPanel()
+    }
+    
+    @IBAction func btnSelectDevicesClicked(sender : NSPopUpButton){
+        openDeviceSelectionMenu()
     }
     
     @IBAction func refreshDevicesClicked( sender:AnyObject) {
@@ -87,9 +99,13 @@ class InstallViewController: NSViewController {
         return self.deviceHelper.getSimulatorList()
     }
     
-    
-    func bootDevices(_ list:[String]) {
-        
+    func updateSelectedSimulators() {
+        if selectedDeviceIds.isEmpty {
+            btnSelectedSimulators.stringValue = "Select devices"
+        }
+        else{
+            btnSelectedSimulators.stringValue = "+\(selectedDeviceIds.count) devices selected"
+        }
     }
     
     
