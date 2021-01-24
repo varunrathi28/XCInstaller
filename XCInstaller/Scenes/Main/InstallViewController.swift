@@ -21,8 +21,8 @@ class InstallViewController: NSViewController {
             self.updateSelectedSimulators()
         }
     }
-    
-    //@IBAction var lblPath : NSLabe
+    var selectedAppPath:String = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,8 +51,12 @@ class InstallViewController: NSViewController {
         panel.canChooseFiles = true
         panel.allowsMultipleSelection = false
         panel.allowedFileTypes = ["app"]
-        panel.begin { (modalResponse) in
+        panel.begin { (result) in
+            guard result == .OK else { return }
             
+            if let path = panel.urls.first?.absoluteString {
+                self.selectedAppPath = path
+            }
         }
     }
     
@@ -65,7 +69,6 @@ class InstallViewController: NSViewController {
             guard let self = self else { return }
             self.selectedDeviceIds = udids
         }
-        //multiSelection.setDataSource(deviceDic)
         self.presentAsModalWindow(multiSelection)
     }
     
@@ -75,7 +78,7 @@ class InstallViewController: NSViewController {
             return
         }
         let bootHelper = DeviceBootHelper()
-        bootHelper.bootDevices(selectedDeviceIds)
+        bootHelper.bootDevices(devices: selectedDeviceIds, selectedAppPath)
     }
     
     @IBAction func appPathSelected(sender: NSPopUpButton) {
