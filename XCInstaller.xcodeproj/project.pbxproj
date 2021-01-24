@@ -24,6 +24,8 @@
 		37869A7925BD2FB30093BF13 /* MultiSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */; };
 		37869A7B25BD4D380093BF13 /* MultiSelectTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */; };
 		37869A7D25BD573C0093BF13 /* Device+DictionaryMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A7C25BD573C0093BF13 /* Device+DictionaryMapping.swift */; };
+		37869A8525BD63830093BF13 /* DeviceSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A8425BD63830093BF13 /* DeviceSelectionViewModel.swift */; };
+		37869A8725BD63F40093BF13 /* DeviceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37869A8625BD63F40093BF13 /* DeviceCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectViewController.swift; sourceTree = "<group>"; };
 		37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectTableCell.swift; sourceTree = "<group>"; };
 		37869A7C25BD573C0093BF13 /* Device+DictionaryMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+DictionaryMapping.swift"; sourceTree = "<group>"; };
+		37869A8425BD63830093BF13 /* DeviceSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelectionViewModel.swift; sourceTree = "<group>"; };
+		37869A8625BD63F40093BF13 /* DeviceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			children = (
 				37869A7825BD2FB30093BF13 /* MultiSelectViewController.swift */,
 				37869A7A25BD4D380093BF13 /* MultiSelectTableCell.swift */,
+				37869A8425BD63830093BF13 /* DeviceSelectionViewModel.swift */,
+				37869A8625BD63F40093BF13 /* DeviceCellViewModel.swift */,
 			);
 			path = "Device Selection";
 			sourceTree = "<group>";
@@ -253,9 +259,11 @@
 				37869A7925BD2FB30093BF13 /* MultiSelectViewController.swift in Sources */,
 				37869A7D25BD573C0093BF13 /* Device+DictionaryMapping.swift in Sources */,
 				37869A3625BC07620093BF13 /* AppDelegate.swift in Sources */,
+				37869A8525BD63830093BF13 /* DeviceSelectionViewModel.swift in Sources */,
 				37869A3B25BC07620093BF13 /* XCInstaller.xcdatamodeld in Sources */,
 				37869A5325BC2A000093BF13 /* ShellCommandHandler.swift in Sources */,
 				37869A7B25BD4D380093BF13 /* MultiSelectTableCell.swift in Sources */,
+				37869A8725BD63F40093BF13 /* DeviceCellViewModel.swift in Sources */,
 				37869A7025BC5D020093BF13 /* Data+JsonString.swift in Sources */,
 				37869A4C25BC0C100093BF13 /* DeviceDataStore.swift in Sources */,
 				37869A7625BC6F460093BF13 /* ShellExecutable.swift in Sources */,
